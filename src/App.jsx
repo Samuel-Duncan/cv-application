@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./styles/App.css";
 
 function App() {
-  return <></>;
+  return <div className="page-wrapper"></div>;
 }
 
 export default App;

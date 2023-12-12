@@ -16,8 +16,6 @@ function Inputs({ id, label, placeholder, type, value, onChange }) {
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          cols="30"
-          rows="10"
         ></textarea>
       )}
     </div>
