@@ -4,7 +4,7 @@ const exampleData = {
   personalInfo: {
     fullName: "John Doe",
     email: "john.doe@example.com",
-    phoneNumber: "+61b4 753b e48a",
+    phoneNumber: "+1 317 753 6484",
     address: "10029507, 671b7797, 3a116d73",
   },
 
