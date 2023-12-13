@@ -1,5 +1,5 @@
 import Inputs from "./Inputs";
-
+import "../styles/PersonalDetails.css";
 function PersonalDetails({
   firstName,
   lastName,
@@ -9,7 +9,7 @@ function PersonalDetails({
   onChange,
 }) {
   return (
-    <form action="">
+    <form action="" className="personal-details">
       <legend>Personal Details</legend>
       <Inputs
         id="firstName"
