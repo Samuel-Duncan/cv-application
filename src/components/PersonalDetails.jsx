@@ -54,3 +54,5 @@ function PersonalDetails({
     </form>
   );
 }
+
+export default PersonalDetails;

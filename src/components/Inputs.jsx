@@ -2,7 +2,14 @@ function Inputs({ id, label, placeholder, type, value, onChange }) {
   return (
     <div className="inputs">
       <label htmlFor={id}>{label}</label>
-      {type === "text" ? (
+      {type === "textarea" ? (
+        <textarea
+          id={id}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        ></textarea>
+      ) : (
         <input
           id={id}
           placeholder={placeholder}
@@ -10,13 +17,6 @@ function Inputs({ id, label, placeholder, type, value, onChange }) {
           value={value}
           onChange={onChange}
         />
-      ) : (
-        <textarea
-          id={id}
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-        ></textarea>
       )}
     </div>
   );
