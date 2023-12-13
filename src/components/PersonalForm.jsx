@@ -1,58 +1,52 @@
 import Inputs from "./Inputs";
-import "../styles/PersonalDetails.css";
-function PersonalDetails({
-  firstName,
-  lastName,
-  email,
-  phoneNumber,
-  address,
-  onChange,
+import "../styles/Forms.css";
+function PersonalForm({
+  firstNameChange,
+  lastNameChange,
+  emailChange,
+  phoneNumberChange,
+  addressChange,
 }) {
   return (
-    <form action="" className="personal-details">
+    <form action="" className="form">
       <legend>Personal Details</legend>
       <Inputs
         id="firstName"
         label="First Name:"
         placeholder="First Name"
         type="text"
-        value={firstName}
-        onChange={onChange}
+        onChange={firstNameChange}
       />
       <Inputs
         id="lastName"
         label="Last Name:"
         placeholder="Last Name"
         type="text"
-        value={lastName}
-        onChange={onChange}
+        onChange={lastNameChange}
       />
       <Inputs
         id="email"
         label="Email:"
         placeholder="Email"
         type="email"
-        value={email}
-        onChange={onChange}
+        onChange={emailChange}
       />
       <Inputs
         id="phoneNumber"
         label="Phone Number:"
         placeholder="Phone Number"
         type="tel"
-        value={phoneNumber}
-        onChange={onChange}
+        onChange={phoneNumberChange}
       />
       <Inputs
         id="address"
         label="Address:"
         placeholder="Address"
         type="text"
-        value={address}
-        onChange={onChange}
+        onChange={addressChange}
       />
     </form>
   );
 }
 
-export default PersonalDetails;
+export default PersonalForm;
