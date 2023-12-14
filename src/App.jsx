@@ -33,13 +33,16 @@ function App() {
 
   return (
     <div className="page-wrapper">
-      <PersonalForm
-        firstNameChange={handleFirstName}
-        lastNameChange={handleLastName}
-        emailChange={handleEmail}
-        phoneNumberChange={handlePhoneNumber}
-        addressChange={handleAddress}
-      />
+      <section className="forms">
+        <PersonalForm
+          firstNameChange={handleFirstName}
+          lastNameChange={handleLastName}
+          emailChange={handleEmail}
+          phoneNumberChange={handlePhoneNumber}
+          addressChange={handleAddress}
+        />
+      </section>
+
       <PersonalPreview
         firstName={firstName}
         lastName={lastName}

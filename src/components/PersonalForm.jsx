@@ -1,5 +1,7 @@
 import Inputs from "./Inputs";
+import Form from "./Form";
 import "../styles/Forms.css";
+
 function PersonalForm({
   firstNameChange,
   lastNameChange,
@@ -8,8 +10,7 @@ function PersonalForm({
   addressChange,
 }) {
   return (
-    <form action="" className="form">
-      <legend>Personal Details</legend>
+    <Form title="Personal Details">
       <Inputs
         id="firstName"
         label="First Name:"
@@ -45,7 +46,7 @@ function PersonalForm({
         type="text"
         onChange={addressChange}
       />
-    </form>
+    </Form>
   );
 }
 
