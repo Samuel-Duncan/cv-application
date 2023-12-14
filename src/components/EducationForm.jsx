@@ -1,8 +1,9 @@
 import Inputs from "./Inputs";
 import Form from "./Form";
+import Buttons from "./Buttons";
 import "../styles/Forms.css";
 
-function EducationForm({ formData, add, remove }) {
+function EducationForm({ isAdded, add, remove }) {
   return (
     <Form title="Education">
       <Inputs
@@ -29,6 +30,13 @@ function EducationForm({ formData, add, remove }) {
         placeholder="End Date"
         type="text"
       ></Inputs>
+      {isAdded ? (
+        <Buttons text="Delete" onClick={remove}></Buttons>
+      ) : (
+        <Buttons onClick={add}></Buttons>
+      )}
     </Form>
   );
 }
+
+export default EducationForm;
