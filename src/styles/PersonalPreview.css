@@ -1,0 +1,29 @@
+h1 {
+  margin-top: -10px;
+  text-align: center;
+}
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.cv-header {
+  display: flex;
+  flex-direction: column;
+  background-color: #213547;
+  color: white;
+  padding: 2em;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.icon-and-info {
+  display: flex;
+  gap: 5px;
+}

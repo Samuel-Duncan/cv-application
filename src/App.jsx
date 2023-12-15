@@ -1,5 +1,4 @@
 import { useState } from "react";
-import exampleData from "./exampleData";
 import PersonalForm from "./components/PersonalForm";
 import PersonalPreview from "./components/PersonalPreview";
 import "./styles/App.css";
@@ -34,6 +33,7 @@ function App() {
   return (
     <div className="page-wrapper">
       <section className="forms">
+        <h2 style={{ marginBottom: "-10px" }}>Personal Details</h2>
         <PersonalForm
           firstNameChange={handleFirstName}
           lastNameChange={handleLastName}
@@ -42,14 +42,15 @@ function App() {
           addressChange={handleAddress}
         />
       </section>
-
-      <PersonalPreview
-        firstName={firstName}
-        lastName={lastName}
-        email={email}
-        phoneNumber={phoneNumber}
-        address={address}
-      />
+      <section>
+        <PersonalPreview
+          firstName={firstName}
+          lastName={lastName}
+          email={email}
+          phoneNumber={phoneNumber}
+          address={address}
+        />
+      </section>
     </div>
   );
 }

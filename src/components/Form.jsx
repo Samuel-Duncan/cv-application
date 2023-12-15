@@ -1,8 +1,7 @@
-function Form({ title, children }) {
+function Form({ children }) {
   return (
     <>
       <form action="" className="form">
-        <legend>{title}</legend>
         {children}
       </form>
     </>

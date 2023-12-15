@@ -1,41 +1,56 @@
-import Inputs from "./Inputs";
-import Form from "./Form";
-import Buttons from "./Buttons";
 import "../styles/Forms.css";
 
-function EducationForm({ isAdded, add, remove }) {
+function EducationForm({ formData, add, save, remove }) {
   return (
-    <Form title="Education">
-      <Inputs
-        id="course"
-        label="Course: "
-        placeholder="Course"
-        type="text"
-      ></Inputs>
-      <Inputs
-        id="school"
-        label="School: "
-        placeholder="School"
-        type="text"
-      ></Inputs>
-      <Inputs
-        id="startDate"
-        label="Start Date: "
-        placeholder="Start Date"
-        type="text"
-      ></Inputs>
-      <Inputs
-        id="endDate"
-        label="End Date: "
-        placeholder="End Date"
-        type="text"
-      ></Inputs>
-      {isAdded ? (
-        <Buttons text="Delete" onClick={remove}></Buttons>
-      ) : (
-        <Buttons onClick={add}></Buttons>
-      )}
-    </Form>
+    <section className="education">
+      <h2>Education</h2>
+      {formData.map((data) => {
+        return (
+          <li key={data.id}>
+            <form className="form" onSubmit={(e) => save(e, data.id)}>
+              <input
+                type="text"
+                placeholder="Course"
+                defaultValue={data.course}
+              ></input>
+              <input
+                type="text"
+                placeholder="University"
+                defaultValue={data.university}
+              ></input>
+              <input
+                type="text"
+                placeholder="Start"
+                defaultValue={data.start}
+              ></input>
+              <input
+                type="text"
+                placeholder="End"
+                defaultValue={data.end}
+              ></input>
+              <div className="btn-container">
+                <button type="submit" className="btn-primary">
+                  Save
+                </button>
+                <button
+                  type="button"
+                  className="btn-secondary"
+                  onClick={() => remove(data.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </form>
+          </li>
+        );
+      })}
+      <form className="form" onSubmit={add}>
+        <input type="text" placeholder="Course"></input>
+        <input type="text" placeholder="University"></input>
+        <input type="text" placeholder="Start"></input>
+        <input type="text" placeholder="End"></input>
+      </form>
+    </section>
   );
 }
 

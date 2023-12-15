@@ -10,7 +10,7 @@ function PersonalForm({
   addressChange,
 }) {
   return (
-    <Form title="Personal Details">
+    <Form>
       <Inputs
         id="firstName"
         label="First Name:"

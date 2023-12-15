@@ -1,3 +1,5 @@
+import "../styles/PersonalPreview.css";
+
 function PersonalPreview({ firstName, lastName, email, phoneNumber, address }) {
   return (
     <header className="cv-header">
