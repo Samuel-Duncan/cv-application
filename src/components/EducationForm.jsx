@@ -4,29 +4,29 @@ function EducationForm({ formData, add, save, remove }) {
   return (
     <section className="education">
       <h2>Education</h2>
-      {formData.map((data) => {
+      {formData.map((formData) => {
         return (
-          <li key={data.id}>
-            <form className="form" onSubmit={(e) => save(e, data.id)}>
+          <li key={formData.id}>
+            <form className="form" onSubmit={(e) => save(e, formData.id)}>
               <input
                 type="text"
                 placeholder="Course"
-                defaultValue={data.course}
+                defaultValue={formData.course}
               ></input>
               <input
                 type="text"
                 placeholder="University"
-                defaultValue={data.university}
+                defaultValue={formData.university}
               ></input>
               <input
                 type="text"
                 placeholder="Start"
-                defaultValue={data.start}
+                defaultValue={formData.start}
               ></input>
               <input
                 type="text"
                 placeholder="End"
-                defaultValue={data.end}
+                defaultValue={formData.end}
               ></input>
               <div className="btn-container">
                 <button type="submit" className="btn-primary">
@@ -35,7 +35,7 @@ function EducationForm({ formData, add, save, remove }) {
                 <button
                   type="button"
                   className="btn-secondary"
-                  onClick={() => remove(data.id)}
+                  onClick={() => remove(formData.id)}
                 >
                   Delete
                 </button>
@@ -49,6 +49,9 @@ function EducationForm({ formData, add, save, remove }) {
         <input type="text" placeholder="University"></input>
         <input type="text" placeholder="Start"></input>
         <input type="text" placeholder="End"></input>
+        <button type="submit" className="btn-primary">
+          Add
+        </button>
       </form>
     </section>
   );
