@@ -1,3 +1,5 @@
+import "../styles/EducationPreview.css";
+
 function EducationPreview({ id, course, school, start, end }) {
   return (
     <li key={id}>

@@ -16,7 +16,7 @@ function EducationForm({ formData, add, save, remove }) {
               <input
                 type="text"
                 placeholder="University"
-                defaultValue={formData.university}
+                defaultValue={formData.school}
               ></input>
               <input
                 type="text"
