@@ -4,6 +4,8 @@ import PersonalForm from "./components/PersonalForm";
 import PersonalPreview from "./components/PersonalPreview";
 import EducationForm from "./components/EducationForm";
 import EducationPreview from "./components/EducationPreview";
+import WorkForm from "./components/WorkForm";
+import WorkPreview from "./components/WorkPreview";
 import "./styles/App.css";
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
   const [education, setEducation] = useState([]);
+  const [work, setWork] = useState([]);
 
   const handleFirstName = (e) => {
     setFirstName(e.target.value);
@@ -71,6 +74,43 @@ function App() {
     });
   };
 
+  const addWork = (e) => {
+    e.preventDefault();
+    const id = uuid();
+    const position = e.target[0].value;
+    const company = e.target[1].value;
+    const start = e.target[2].value;
+    const end = e.target[3].value;
+    let newWork = { id, position, company, start, end };
+    setWork([...work, newWork]);
+    clear(e);
+  };
+
+  const saveWork = (e, id) => {
+    e.preventDefault();
+    const position = e.target[0].value;
+    const company = e.target[1].value;
+    const start = e.target[2].value;
+    const end = e.target[3].value;
+    const updateWork = { position, company, start, end };
+
+    setWork(
+      work.map((wo) => {
+        if (wo.id === id) {
+          return { ...wo, ...updateWork };
+        } else {
+          return wo;
+        }
+      }),
+    );
+  };
+
+  const removeWork = (id) => {
+    setWork((currentWork) => {
+      return currentWork.filter((wo) => wo.id !== id);
+    });
+  };
+
   const clear = (e) => {
     for (let i = 0; i < e.target.length; i++) {
       e.target[i].value = "";
@@ -94,6 +134,12 @@ function App() {
           save={saveEducation}
           remove={removeEducation}
         />
+        <WorkForm
+          formData={work}
+          add={addWork}
+          save={saveWork}
+          remove={removeWork}
+        />
       </section>
       <section>
         <PersonalPreview
@@ -103,6 +149,7 @@ function App() {
           phoneNumber={phoneNumber}
           address={address}
         />
+        <h2>Education</h2>
         {education.map((edu) => {
           return (
             <EducationPreview
@@ -112,6 +159,18 @@ function App() {
               start={edu.start}
               end={edu.end}
             ></EducationPreview>
+          );
+        })}
+        <h2>Work</h2>
+        {work.map((wo) => {
+          return (
+            <WorkPreview
+              key={wo.id}
+              position={wo.position}
+              company={wo.company}
+              start={wo.start}
+              end={wo.end}
+            ></WorkPreview>
           );
         })}
       </section>
